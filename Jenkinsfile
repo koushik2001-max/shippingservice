@@ -26,7 +26,7 @@ pipeline {
       steps {
        
 
-       sh '/var/opt/sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner -Dsonar.projectKey=shippingservice- -Dsonar.sources=. -Dsonar.host.url=http://172.31.7.193:9000 -Dsonar.token=sqp_af95d9023e0f1265a2dec5674526f02583532047'
+       sh '/var/opt/sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner -Dsonar.projectKey=shippingservice -Dsonar.sources=. -Dsonar.host.url=http://172.31.7.193:9000 -Dsonar.token=sqp_af95d9023e0f1265a2dec5674526f02583532047'
 
         
       }
