@@ -1,6 +1,6 @@
 def secrets = [
     [
-        path: 'secrets/creds/shipping',
+        path: 'secrets/creds/my-secret-text',
         engineVersion: 2,
         secretValues: [
             [envVar: 'SONARQUBE_TOKEN', vaultKey: 'shipping']
@@ -46,7 +46,7 @@ pipeline {
             agent any
             steps {
                 withVault([configuration: configuration, vaultSecrets: secrets]) {
-                    sh "/var/opt/sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner -Dsonar.projectKey=shippingservice -Dsonar.sources=. -Dsonar.host.url=http://172.31.7.193:9000 -Dsonar.login=$SONARQUBE_TOKEN"
+                    sh "/var/opt/sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner -Dsonar.projectKey=shippingservice -Dsonar.sources=. -Dsonar.host.url=http://172.31.7.193:9000 -Dsonar.token=$SONARQUBE_TOKEN"
                 }
             }
         }
